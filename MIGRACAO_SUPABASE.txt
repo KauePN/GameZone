@@ -1,0 +1,10 @@
+
+1. Abra o projeto no Android Studio.
+2. Rode: flutter pub get
+3. Configure a tabela usando SUPABASE_SETUP.md.
+4. Em lib/main.dart, preencha:
+   - supabaseUrl
+   - supabasePublishableKey
+5. Rode: flutter run
+
+Não coloque service_role key no aplicativo.

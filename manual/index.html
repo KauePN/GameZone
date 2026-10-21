@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameZone | Manual Técnico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🎮 GAMEZONE</div>
+  <nav>
+    <a href="#apresentacao">Apresentação</a>
+    <a href="#instalacao">Instalação</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#manutencao">Manutenção</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="tag">Projeto AV1 • Flutter + Dart</span>
+    <h1>GameZone</h1>
+    <p>Biblioteca pessoal de jogos com autenticação, banco de dados e CRUD completo.</p>
+  </section>
+
+  <section id="apresentacao">
+    <h2>1. Apresentação</h2>
+    <p>O GameZone permite ao usuário criar uma conta e gerenciar uma coleção pessoal de jogos.</p>
+    <h3>Público-alvo</h3>
+    <p>Jogadores que desejam organizar informações sobre seus jogos favoritos em um único aplicativo.</p>
+  </section>
+
+  <section>
+    <h2>2. Tecnologias</h2>
+    <ul>
+      <li>Flutter e Dart</li>
+      <li>Supabase Auth</li>
+      <li>Supabase PostgreSQL</li>
+      <li>Android Studio / VS Code</li>
+      <li>Git e GitHub</li>
+      <li>HTML e CSS</li>
+    </ul>
+  </section>
+
+  <section id="instalacao">
+    <h2>3. Instalação</h2>
+    <ol>
+      <li>Instale o Flutter SDK e o VS Code.</li>
+      <li>Abra a pasta GameZone no VS Code.</li>
+      <li>Execute <code>flutter pub get</code>.</li>
+      <li>Instale o Supabase CLI e o FlutterFire CLI.</li>
+      <li>Execute <code>flutterfire configure</code>.</li>
+      <li>Crie ou selecione um projeto Supabase.</li>
+      <li>Execute <code>flutter run</code>.</li>
+    </ol>
+  </section>
+
+  <section id="estrutura">
+    <h2>4. Estrutura de pastas</h2>
+    <pre>lib/
+├── models/       # modelos de dados
+├── screens/      # telas
+├── services/     # Supabase e autenticação
+├── widgets/      # componentes reutilizáveis
+├── theme/        # identidade visual
+└── utils/        # validações</pre>
+  </section>
+
+    <h2>5. Supabase e banco de dados</h2>
+    <p>O Supabase Auth controla as contas. O Supabase PostgreSQL armazena os jogos de cada usuário.</p>
+    <p>Estrutura:</p>
+    <pre>users
+└── {uid}
+    └── games
+        └── {gameId}
+            ├── title
+            ├── genre
+            ├── platform
+            ├── year
+            ├── description
+            ├── coverUrl
+            └── createdAt</pre>
+    <p>As regras de segurança restringem cada usuário aos próprios registros.</p>
+  </section>
+
+  <section>
+    <h2>6. CRUD</h2>
+    <ul>
+      <li><strong>Criar:</strong> botão “Novo jogo”.</li>
+      <li><strong>Consultar:</strong> a tela inicial lista os jogos em tempo real.</li>
+      <li><strong>Editar:</strong> menu do card → Editar.</li>
+      <li><strong>Excluir:</strong> menu do card → Excluir.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Identidade visual</h2>
+    <p>O GameZone utiliza fundo escuro, roxo como cor principal e ciano como destaque. O ícone de controle representa o tema gamer.</p>
+    <p>Para alterar as cores, edite as constantes em <code>lib/theme/app_theme.dart</code>.</p>
+  </section>
+
+  <section id="manutencao">
+    <h2>8. Manual de manutenção</h2>
+    <h3>Alterar o nome</h3>
+    <p>Edite o título em <code>lib/main.dart</code> e, para o nome exibido no dispositivo, configure também o projeto Android/iOS conforme a plataforma.</p>
+    <h3>Alterar o logo</h3>
+    <p>O logo atual é um componente em <code>lib/widgets/gamezone_logo.dart</code>. Para usar uma imagem, coloque-a em <code>assets/images/</code> e registre o arquivo no <code>pubspec.yaml</code>.</p>
+    <h3>Adicionar campo ao jogo</h3>
+    <p>Inclua o campo no <code>GameModel</code>, no formulário <code>game_form_screen.dart</code> e no mapa enviado ao Firestore.</p>
+    <h3>Adicionar tela</h3>
+    <p>Crie um arquivo em <code>lib/screens/</code> e navegue usando <code>Navigator.push</code>.</p>
+    <h3>Gerar nova versão</h3>
+    <pre>flutter clean
+flutter pub get
+flutter build apk --release</pre>
+  </section>
+
+  <section>
+    <h2>9. Problemas comuns</h2>
+    <ul>
+      <li><strong>Supabase não inicializa:</strong> execute novamente <code>flutterfire configure</code>.</li>
+      <li><strong>Login falha:</strong> confira se o provedor E-mail/Senha está habilitado no Supabase Auth.</li>
+      <li><strong>Firestore nega acesso:</strong> confira as regras do arquivo <code>firestore.rules</code>.</li>
+      <li><strong>Dependências com erro:</strong> execute <code>flutter pub get</code>.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>GameZone • Projeto AV1 • Documentação técnica</footer>
+</body>
+</html>
