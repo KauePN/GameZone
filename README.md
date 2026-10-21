@@ -1,4 +1,4 @@
-# 🎮 GameZone
+#  GameZone
 
 Projeto AV1 desenvolvido com Flutter e Dart.
 
